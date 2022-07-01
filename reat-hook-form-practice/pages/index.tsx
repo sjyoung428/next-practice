@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<IForm>({
     mode: "onChange",
   });
@@ -21,7 +21,9 @@ const Home: NextPage = () => {
   const onValid = () => {
     setValidMessage("Thank you.");
   };
-  const onInValid = () => {};
+  const onInValid = () => {
+    setValidMessage("");
+  };
   return (
     <>
       <form onSubmit={handleSubmit(onValid, onInValid)}>
@@ -67,9 +69,7 @@ const Home: NextPage = () => {
           <span>{errors.password?.message}</span>
         </div>
         <button>Log in</button>
-        <div>
-          <span>{validMessage}</span>
-        </div>
+        <div>{isValid && <span>{validMessage}</span>}</div>
       </form>
     </>
   );
