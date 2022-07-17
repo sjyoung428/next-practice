@@ -13,3 +13,7 @@ After logging in, in the Home Page, the user should see all the Tweets on the da
 The user should be able to see the tweet + a Like button.
 
 When the Like button is pressed, save the like on the database and reflect the update using mutate from useSWR.
+
+Prisma is configured in the blueprint with SQLite.
+
+When you modify your prisma.schema run npm run db-sync.
