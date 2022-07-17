@@ -21,7 +21,6 @@ const CreateAccount = () => {
   }, [data?.ok, router]);
   const onValid = (formData: FormState) => {
     signup(formData);
-    console.log(data);
   };
 
   return (
